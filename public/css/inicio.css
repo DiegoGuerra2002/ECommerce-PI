@@ -1,0 +1,27 @@
+.Separadores {
+    color: #fe9b32;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    background-color: #fe9b32;
+    bottom: 20px;
+    right: 20px;
+    display: none; /* Ocultar el botón por defecto */
+    z-index: 9999; /* Asegurar que el botón esté encima de otros elementos */
+    border-color: #fe9b32;
+}
+
+.card {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #fe9b32;
+}
+
+
+.banner2 {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
