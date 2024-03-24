@@ -88,9 +88,6 @@
             </div>
         </div>
     </section>
-
-aknsdiansdonaosd
-
 </main>
 
 <footer>
