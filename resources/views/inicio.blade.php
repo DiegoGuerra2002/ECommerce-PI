@@ -35,7 +35,7 @@
                             Categorias
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Productos Frescos</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pFrescos') }}">Productos Frescos</a></li>
                             <li><a class="dropdown-item" href="#">Productos Congelados</a></li>
                             <li><a class="dropdown-item" href="#">Cuidado Personal</a></li>
                             <li><a class="dropdown-item" href="#">Cuidado del Hogar</a></li>
@@ -72,7 +72,7 @@
     <section class="card-section">
         <div class="card-group">
             <div class="card">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ route('pFrescos') }}">
                     <img src="/images/pfrescos.jpeg" class="card-img-top" alt="...">  
                 </a> 
             </div>

@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
+
+Route::get('/header', function () {
+    return view('headerGeneral');
+});
+
+Route::get('/footer', function () {
+    return view('footerGeneral');
+});
+
+Route::get('/productosFrescos', function () {
+    return view('productosFrescos');
+})->name('pFrescos');
