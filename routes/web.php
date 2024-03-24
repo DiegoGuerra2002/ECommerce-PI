@@ -32,3 +32,15 @@ Route::get('/productosFrescos', function () {
 Route::get('/productosCongelados', function () {
     return view('productosCongelados');
 })->name('pConge');
+
+Route::get('/cuidadoPersonal', function () {
+    return view('productosCuidado');
+})->name('pCuidadopersonal');
+
+Route::get('/productosHogar', function () {
+    return view('productosHogar');
+})->name('pHogar');
+
+Route::get('/productosMascotas', function () {
+    return view('productosMascotas');
+})->name('pMascotas');
