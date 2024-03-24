@@ -28,3 +28,7 @@ Route::get('/footer', function () {
 Route::get('/productosFrescos', function () {
     return view('productosFrescos');
 })->name('pFrescos');
+
+Route::get('/productosCongelados', function () {
+    return view('productosCongelados');
+})->name('pConge');

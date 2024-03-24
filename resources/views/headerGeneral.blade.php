@@ -36,7 +36,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{ route('pFrescos') }}">Productos Frescos</a></li>
-                                <li><a class="dropdown-item" href="#">Productos Congelados</a></li>
+                                <li><a class="dropdown-item" href="{{ route('pConge') }}">Productos Congelados</a></li>
                                 <li><a class="dropdown-item" href="#">Cuidado Personal</a></li>
                                 <li><a class="dropdown-item" href="#">Cuidado del Hogar</a></li>
                                 <li><a class="dropdown-item" href="#">Cuidado de Mascotas</a></li>
