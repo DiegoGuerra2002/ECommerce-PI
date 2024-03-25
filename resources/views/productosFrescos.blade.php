@@ -35,10 +35,14 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Contactanos</h5>
-                    <p class="card-text">2441-5704<br>7876-0573<br>7260-8282
-                        <br>
-                        variedadeshildas@gmail.com
-                    </p>
+                    <p class="card-text">
+                    2441-5704
+                    <br>
+                    variedadeshildas@gmail.com
+                    <br>
+                    <a href="https://www.instagram.com/variedadeshildas?igsh=MXBsdGVscW1qcmdyeg=="><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/variedades.hildas?mibextid=kFxxJD"><i class="bi bi-facebook"></i></a> 
+                </p>
                 </div>
                 <div class="card-footer text-body-secondary border-0" id="footer-date">
                 </div>
