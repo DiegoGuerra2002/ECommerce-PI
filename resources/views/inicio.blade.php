@@ -25,10 +25,10 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('inicio') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sobre nosotros</a>
+                        <a class="nav-link" href="{{ route('snosotros') }}">Sobre nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contactenos</a>
+                        <a class="nav-link" href="#abajo">Contactenos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -90,7 +90,7 @@
     </section>
 </main>
 
-<footer>
+<footer id="abajo">
 
     <section class="banner2 d-flex justify-content-center align-items-center">
         <img src="/images/banner2.png" alt="Banner" style="max-width: 100%;">

@@ -24,7 +24,7 @@
         
     </main>
     
-    <footer>
+    <footer id="abajo">
         <section class="banner2 d-flex justify-content-center align-items-center">
             <img src="/images/banner2.png" alt="Banner" style="max-width: 100%;">
         </section>

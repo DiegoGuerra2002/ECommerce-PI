@@ -44,3 +44,7 @@ Route::get('/productosHogar', function () {
 Route::get('/productosMascotas', function () {
     return view('productosMascotas');
 })->name('pMascotas');
+
+Route::get('/sobreNosotros', function () {
+    return view('snosotros');
+})->name('snosotros');
