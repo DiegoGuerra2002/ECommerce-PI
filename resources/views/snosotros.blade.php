@@ -21,18 +21,17 @@
     
     <main>    
         <section class="bannerS d-flex justify-content-center align-items-center">
-            <div class="card mb-3 border-0" style="max-width: 800px;">
+            <div class="card mb-3 border-0" style="max-width: 1200px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <!-- Modificamos la clase 'img-fluid' para hacer la imagen completamente responsiva -->
-                        <img src="/images/personalMarket.jpg" class="img-fluid rounded-start h-100" alt="...">
+                        <img src="/images/personalMarket.jpg" class="img-fluid rounded-start" alt="..." style="max-height: 100%; width: auto;">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 align-self-center">
                         <div class="card-body">
                             <h2 class="card-title">Un poco sobre nuestra historia.</h2>
-                            <p class="card-text">
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                
+                            <p class="card-text " style="text-align: justify;">
+                                Mini-Super Variedades Hilda´s fue fundado en 1989, empezó como un pequeño emprendimiento de venta de Sopa de Patas, que posteriormente evolucionaría de tal manera que abarcaba las necesidades personales de las personas, tiempo después este se fue expandiendo sus productos de tal manera que poco a poco su clientela aumentaría. En el 2007 su propietaria Hilda Ramírez fue diagnosticada con Cáncer de mama, una noticia muy desgarradora para su esposo e hijas, en el 2009 la Señora Hilda Ramírez fallecería a causa del cáncer de mama, dejando su negocio en manos de su esposo, hijas y nieta. Arnulfo Ramírez junto con sus hijas Denisse Ramírez e Ivette Ramírez, su nieta Arlette Ramírez, quienes sacarían adelante este pequeño emprendimiento, ampliándolo cada vez más, ahora Mini-Super Hilda´s cuenta con una amplia gama de productos de igual manera de clientes, quienes prefieren sus servicios por su atención y calidad.
                             </p>
                             <p class="card-text"><small class="text-body-secondary">Desde 1989 bajo la cobertura de Dios</small></p>
                         </div>
@@ -40,6 +39,8 @@
                 </div>
             </div>
         </section>
+    </main>
+
 
         <section class="sec2 d-flex justify-content-center align-items-center">
             <h1 class="Separadores2">¿Donde estamos ubicados?</h1>

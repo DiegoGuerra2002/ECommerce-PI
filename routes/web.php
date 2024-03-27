@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,3 +48,25 @@ Route::get('/productosMascotas', function () {
 Route::get('/sobreNosotros', function () {
     return view('snosotros');
 })->name('snosotros');
+
+Route::group([], function(){
+    Route::resource('/productos', ProductoController::class);
+    Route::get('/productosSECRETO', [ProductoController::class, 'index'])->name('productos');
+});
+
+Route::get('/productosSECRETOCREAR', function () {
+    return view('crear');
+})->name('crear');
+
+Route::get('/productosSECRETOEDITAR', function () {
+    return view('editar');
+})->name('editar');
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
