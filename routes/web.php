@@ -54,19 +54,7 @@ Route::group([], function(){
     Route::get('/productosSECRETO', [ProductoController::class, 'index'])->name('productos');
 });
 
-Route::get('/productosSECRETOCREAR', function () {
-    return view('crear');
-})->name('crear');
 
 Route::get('/productosSECRETOEDITAR', function () {
     return view('editar');
 })->name('editar');
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});

@@ -9,6 +9,7 @@
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
+    
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -54,42 +55,47 @@
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>IMAGEN</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($productos as $producto)
-                    <tr>
-                        <td>{{$producto->id}}</td>
+        <div class="container mt-4">
+            <div class="table-responsive">
+                <table class="table caption-top">
+                    <caption>Lista de Productos</caption>
+                    <thead>
+                        <tr>
+                        <th scope="col" style="display: none;">ID</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($productos as $producto)
+                        <tr>
+                        <th scope="row" style="display: none;">{{$producto->id}}</th>
                         <td>{{$producto->nombre}}</td>
                         <td>{{$producto->descripcion}}</td>
                         <td>
-                            <img src="/images/{{$producto->imagen}}" width="60%">
+                            <img src="/images/{{$producto->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="{{route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
-                                <form action="{{route('productos.destroy', $producto->id) }}" method="POST" class="formEliminar">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Borrar</button>
-                                </form>
+                            <a href="{{route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
+                            <form action="{{route('productos.destroy', $producto->id) }}" method="POST" class="formEliminar">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" style="margin-left: 5px;">Borrar</button>
+                            </form>
                             </div>
                         </td>
-                    </tr>
-                    @endforeach    
-                </tbody>
-            </table>
-                <div>
-                    {!! $productos->links() !!}
-                </div>
+                        </tr>
+                        @endforeach    
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                {!! $productos->links() !!}
+            </div>
+        </div>
         </section>
     </main>
     
