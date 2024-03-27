@@ -15,6 +15,11 @@ class ProductoController extends Controller
         return view('index', compact('productos'));
     }
 
+    public function pFrescos()
+    {
+        $productos = Producto::all(); // Otra forma de obtener los productos
+        return view('productosFrescos')->with('productos', $productos);
+    }
     /**
      * Show the form for creating a new resource.
      */

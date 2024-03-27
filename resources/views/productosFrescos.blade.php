@@ -18,9 +18,28 @@
             <h1 class= "Separadores"> Productos Frescos </h1>
         </section>
 
-        <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1> Proximamente</h1>
+        <section class="sec2 d-flex justify-content-center align-items-center">
+            @foreach ($productos as $producto)
+            <div class="card justify-content-between mt-3 text-dark bg-fe9b32" style="width: 15rem;">
+                <div class="card-body">
+                    <img src="{{ asset('images/' . $producto->imagen) }}" class="card-img-top" alt="{{ $producto->nombre }}">
+                    <h6 class="card-text d-flex justify-content-center align-items-center">{{ $producto->nombre }}</h6>
+                    <p class="d-flex justify-content-center align-items-center">{{ $producto->descripcion }}</p>
+                    <!-- Input para la cantidad -->
+                    <!--<div class="input-container justify-content-center">
+                        <button class="decrement-button">-</button>
+                        <input type="number" class="number-input" id="number{{ $producto->id }}" value="0">
+                        <button class="increment-button">+</button>
+                    </div> -->
+                    <!-- Botón "Añadir" -->
+                    <!--<div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $producto->id }}', '{{ $producto->ingrediente }}', '{{ $producto->precio }}')">Añadir</button>
+                    </div> -->
+                </div>
+            </div>
+            @endforeach
         </section>
+
     </main>
     
     <footer id="abajo">

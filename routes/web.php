@@ -52,6 +52,7 @@ Route::get('/sobreNosotros', function () {
 Route::group([], function(){
     Route::resource('/productos', ProductoController::class);
     Route::get('/productosSECRETO', [ProductoController::class, 'index'])->name('productos');
+    Route::get('/productosFrescos', [ProductoController::class, 'pFrescos'])->name('pFrescos');
 });
 
 
