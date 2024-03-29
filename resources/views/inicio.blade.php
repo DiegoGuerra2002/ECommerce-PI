@@ -37,7 +37,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ route('pFrescos') }}">Productos Frescos</a></li>
                             <li><a class="dropdown-item" href="{{ route('pConge') }}">Productos Congelados</a></li>
-                            <li><a class="dropdown-item" href="{{ route('pCuidadopersonal') }}">Cuidado Personal</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pCuida') }}">Cuidado Personal</a></li>
                             <li><a class="dropdown-item" href="{{ route('pHogar') }}">Cuidado del Hogar</a></li>
                             <li><a class="dropdown-item" href="{{ route('pMascotas') }}">Cuidado de Mascotas</a></li>
                         </ul>
@@ -77,7 +77,7 @@
                 </a> 
             </div>
             <div class="card">
-                <a class="dropdown-item" href="{{ route('pCuidadopersonal') }}">
+                <a class="dropdown-item" href="{{ route('pCuida') }}">
                    <img src="/images/pcuidadoper.jpeg" class="card-img-top" alt="..."> 
                 </a>
             </div>

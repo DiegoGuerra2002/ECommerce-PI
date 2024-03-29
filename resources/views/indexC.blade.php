@@ -29,7 +29,10 @@
                             <a class="nav-link active" aria-current="page" href="{{route('pcoductos')}}">Productos Congelados</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{route('ppoductos')}}">Productos Cuidado Personal</a>
+                            <a class="nav-link active" aria-current="page" href="{{route('ppoductos')}}">Cuidado Personal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('phoductos')}}">Cuidado Hogar</a>
                         </li>
                     </ul>
                 </div>
