@@ -34,6 +34,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{route('phoductos')}}">Cuidado Hogar</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('pmoductos')}}">Mascotas</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Nuevo div para el carrito -->

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PcoductoController;
 use App\Http\Controllers\PpoductoController;
 use App\Http\Controllers\PhoductoController;
+use App\Http\Controllers\PmoductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,6 +75,12 @@ Route::group([], function(){
     Route::resource('/phoductos', PhoductoController::class);
     Route::get('/productosHADMIN', [PhoductoController::class, 'index'])->name('phoductos');
     Route::get('/productosHogar', [PhoductoController::class, 'pHogar'])->name('pHogar');
+});
+
+Route::group([], function(){
+    Route::resource('/pmoductos', PmoductoController::class);
+    Route::get('/productosMADMIN', [PmoductoController::class, 'index'])->name('pmoductos');
+    Route::get('/productosMascotas', [PmoductoController::class, 'pMascotas'])->name('pMascotas');
 });
 
 Route::get('/productosSECRETOEDITAR', function () {

@@ -63,7 +63,7 @@
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
-            <a href="{{route('phoductos.create')}}" class="btn btn-primary">Añadir Productos Cuidado Personal</a>
+            <a href="{{route('pmoductos.create')}}" class="btn btn-primary">Añadir Productos Mascotas</a>
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
@@ -82,19 +82,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($phoductos as $phoducto)
+                        @foreach ($pmoductos as $pmoducto)
                         <tr>
-                        <th scope="row" style="display: none;">{{$phoducto->id}}</th>
-                        <td>{{$phoducto->nombre}}</td>
-                        <td>{{$phoducto->descripcion}}</td>
+                        <th scope="row" style="display: none;">{{$pmoducto->id}}</th>
+                        <td>{{$pmoducto->nombre}}</td>
+                        <td>{{$pmoducto->descripcion}}</td>
                         <td>
-                            <img src="/images/{{$phoducto->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
+                            <img src="/images/{{$pmoducto->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
                         </td>
-                        <td>{{$phoducto->precio}}</td>
+                        <td>{{$pmoducto->precio}}</td>
                         <td>
                             <div class="btn-group">
-                            <a href="{{route('phoductos.edit', $phoducto->id) }}" class="btn btn-primary">Editar</a>
-                            <form action="{{route('phoductos.destroy', $phoducto->id) }}" method="POST" class="formEliminar">
+                            <a href="{{route('pmoductos.edit', $pmoducto->id) }}" class="btn btn-primary">Editar</a>
+                            <form action="{{route('pmoductos.destroy', $pmoducto->id) }}" method="POST" class="formEliminar">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" style="margin-left: 5px;">Borrar</button>
@@ -107,7 +107,7 @@
                 </table>
             </div>
             <div>
-                {!! $phoductos->links() !!}
+                {!! $pmoductos->links() !!}
             </div>
         </div>
         </section>
