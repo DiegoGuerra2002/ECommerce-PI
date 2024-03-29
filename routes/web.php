@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\PcoductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,10 +52,15 @@ Route::get('/sobreNosotros', function () {
 
 Route::group([], function(){
     Route::resource('/productos', ProductoController::class);
-    Route::get('/productosSECRETO', [ProductoController::class, 'index'])->name('productos');
+    Route::get('/productosFRESCOSADMIN', [ProductoController::class, 'index'])->name('productos');
     Route::get('/productosFrescos', [ProductoController::class, 'pFrescos'])->name('pFrescos');
 });
 
+Route::group([], function(){
+    Route::resource('/pcoductos', PcoductoController::class);
+    Route::get('/productosCADMIN', [PcoductoController::class, 'index'])->name('pcoductos');
+    Route::get('/productosCongelados', [PcoductoController::class, 'pConge'])->name('pConge');
+});
 
 Route::get('/productosSECRETOEDITAR', function () {
     return view('editar');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos Congelados</title>
+    <title>Productos Frescos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="./css/inicio.css" rel="stylesheet">
@@ -15,13 +15,32 @@
     <main>
         
         <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1 class= "Separadores"> Productos Congelados </h1>
+            <h1 class= "Separadores"> Productos Frescos </h1>
         </section>
 
-        <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1> Proximamente</h1>
+        <section class="sec2 d-flex justify-content-center align-items-center">
+            @foreach ($pcoductos as $pcoducto)
+            <div class="card justify-content-between mt-3 text-dark bg-fe9b32" style="width: 15rem;">
+                <div class="card-body">
+                    <img src="{{ asset('images/' . $pcoducto->imagen) }}" class="card-img-top" alt="{{ $pcoducto->nombre }}">
+                    <h6 class="card-text d-flex justify-content-center align-items-center">{{ $pcoducto->nombre }}</h6>
+                    <p class="d-flex justify-content-center align-items-center">{{ $pcoducto->descripcion }}</p>
+                    <p class="d-flex justify-content-center align-items-center">${{ $pcoducto->precio }}</p>
+                    <!-- Input para la cantidad -->
+                    <!--<div class="input-container justify-content-center">
+                        <button class="decrement-button">-</button>
+                        <input type="number" class="number-input" id="number{{ $pcoducto->id }}" value="0">
+                        <button class="increment-button">+</button>
+                    </div> -->
+                    <!-- Botón "Añadir" -->
+                    <!--<div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $pcoducto->id }}', '{{ $pcoducto->nombre }}', '{{ $pcoducto->precio }}')">Añadir</button>
+                    </div> -->
+                </div>
+            </div>
+            @endforeach
         </section>
-        
+
     </main>
     
     <footer id="abajo">
