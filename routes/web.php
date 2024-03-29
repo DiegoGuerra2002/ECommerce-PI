@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\PcoductoController;
+use App\Http\Controllers\PpoductoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,9 +35,9 @@ Route::get('/productosCongelados', function () {
     return view('productosCongelados');
 })->name('pConge');
 
-Route::get('/cuidadoPersonal', function () {
+Route::get('/productosCuidado', function () {
     return view('productosCuidado');
-})->name('pCuidadopersonal');
+})->name('pCuida');
 
 Route::get('/productosHogar', function () {
     return view('productosHogar');
@@ -60,6 +61,12 @@ Route::group([], function(){
     Route::resource('/pcoductos', PcoductoController::class);
     Route::get('/productosCADMIN', [PcoductoController::class, 'index'])->name('pcoductos');
     Route::get('/productosCongelados', [PcoductoController::class, 'pConge'])->name('pConge');
+});
+
+Route::group([], function(){
+    Route::resource('/ppoductos', PpoductoController::class);
+    Route::get('/productosPADMIN', [PpoductoController::class, 'index'])->name('ppoductos');
+    Route::get('/productosCuidado', [PpoductoController::class, 'pCuida'])->name('pCuida');
 });
 
 Route::get('/productosSECRETOEDITAR', function () {

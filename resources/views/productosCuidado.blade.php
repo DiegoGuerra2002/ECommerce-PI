@@ -13,15 +13,34 @@
     @section('content')
     
     <main>
-
+        
         <section class= "sec2 d-flex justify-content-center align-items-center">
             <h1 class= "Separadores"> Cuidado Personal </h1>
         </section>
 
-        <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1> Proximamente</h1>
+        <section class="sec2 d-flex justify-content-center align-items-center">
+            @foreach ($ppoductos as $ppoducto)
+            <div class="card justify-content-between mt-3 text-dark bg-fe9b32" style="width: 15rem;">
+                <div class="card-body">
+                    <img src="{{ asset('images/' . $ppoducto->imagen) }}" class="card-img-top" alt="{{ $ppoducto->nombre }}">
+                    <h6 class="card-text d-flex justify-content-center align-items-center">{{ $ppoducto->nombre }}</h6>
+                    <p class="d-flex justify-content-center align-items-center">{{ $ppoducto->descripcion }}</p>
+                    <p class="d-flex justify-content-center align-items-center">${{ $ppoducto->precio }}</p>
+                    <!-- Input para la cantidad -->
+                    <!--<div class="input-container justify-content-center">
+                        <button class="decrement-button">-</button>
+                        <input type="number" class="number-input" id="number{{ $ppoducto->id }}" value="0">
+                        <button class="increment-button">+</button>
+                    </div> -->
+                    <!-- Botón "Añadir" -->
+                    <!--<div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $ppoducto->id }}', '{{ $ppoducto->nombre }}', '{{ $ppoducto->precio }}')">Añadir</button>
+                    </div> -->
+                </div>
+            </div>
+            @endforeach
         </section>
-        
+
     </main>
     
     <footer id="abajo">
