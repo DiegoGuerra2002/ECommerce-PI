@@ -23,7 +23,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{route('productos')}}">Productos</a>
+                            <a class="nav-link active" aria-current="page" href="{{route('productos')}}">Productos Frescos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Productos Congelados</a>
                         </li>
                     </ul>
                 </div>
@@ -65,6 +68,7 @@
                         <th scope="col">Producto</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Imagen</th>
+                        <th scope="col">Precio</th>
                         <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -77,6 +81,7 @@
                         <td>
                             <img src="/images/{{$producto->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
                         </td>
+                        <td>{{$producto->precio}}</td>
                         <td>
                             <div class="btn-group">
                             <a href="{{route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>

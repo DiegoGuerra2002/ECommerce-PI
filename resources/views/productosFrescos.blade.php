@@ -25,6 +25,7 @@
                     <img src="{{ asset('images/' . $producto->imagen) }}" class="card-img-top" alt="{{ $producto->nombre }}">
                     <h6 class="card-text d-flex justify-content-center align-items-center">{{ $producto->nombre }}</h6>
                     <p class="d-flex justify-content-center align-items-center">{{ $producto->descripcion }}</p>
+                    <p class="d-flex justify-content-center align-items-center">${{ $producto->precio }}</p>
                     <!-- Input para la cantidad -->
                     <!--<div class="input-container justify-content-center">
                         <button class="decrement-button">-</button>

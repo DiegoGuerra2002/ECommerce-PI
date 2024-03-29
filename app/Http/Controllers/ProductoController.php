@@ -32,23 +32,26 @@ class ProductoController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'nombre' => 'required', 'descripcion' => 'required', 'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024'
-        ]);
+{
+    $request->validate([
+        'nombre' => 'required',
+        'descripcion' => 'required',
+        'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024',
+        'precio' => 'required|numeric|min:0', // Validación para el precio
+    ]);
 
-         $producto = $request->all();
+    $producto = $request->all();
 
-         if($imagen = $request->file('imagen')) {
-             $rutaGuardarImg = 'images/';
-             $imagenProducto = date('YmdHis'). "." . $imagen->getClientOriginalExtension();
-             $imagen->move($rutaGuardarImg, $imagenProducto);
-             $producto['imagen'] = "$imagenProducto";             
-         }
-         
-         Producto::create($producto);
-         return redirect()->route('productos.index');
+    if ($imagen = $request->file('imagen')) {
+        $rutaGuardarImg = 'images/';
+        $imagenProducto = date('YmdHis') . "." . $imagen->getClientOriginalExtension();
+        $imagen->move($rutaGuardarImg, $imagenProducto);
+        $producto['imagen'] = $imagenProducto;
     }
+
+    Producto::create($producto);
+    return redirect()->route('productos.index');
+}
 
     /**
      * Display the specified resource.
