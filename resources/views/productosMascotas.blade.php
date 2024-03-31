@@ -13,32 +13,60 @@
     @section('content')
     
     <main>
-        
+        <section class="sec2 d-flex justify-content-center align-items-center">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="./images/bannerMascotas1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                <img src="./images/bannerMascotas2.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </section>
+
         <section class= "sec2 d-flex justify-content-center align-items-center">
             <h1 class= "Separadores">  Mascotas </h1>
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
-            @foreach ($pmoductos as $pmoducto)
-            <div class="card justify-content-between mt-3 text-dark bg-fe9b32" style="width: 15rem;">
-                <div class="card-body">
-                    <img src="{{ asset('images/' . $pmoducto->imagen) }}" class="card-img-top" alt="{{ $pmoducto->nombre }}">
-                    <h6 class="card-text d-flex justify-content-center align-items-center">{{ $pmoducto->nombre }}</h6>
-                    <p class="d-flex justify-content-center align-items-center">{{ $pmoducto->descripcion }}</p>
-                    <p class="d-flex justify-content-center align-items-center">${{ $pmoducto->precio }}</p>
-                    <!-- Input para la cantidad -->
-                    <!--<div class="input-container justify-content-center">
-                        <button class="decrement-button">-</button>
-                        <input type="number" class="number-input" id="number{{ $pmoducto->id }}" value="0">
-                        <button class="increment-button">+</button>
-                    </div> -->
-                    <!-- Botón "Añadir" -->
-                    <!--<div class="d-flex justify-content-center mt-3">
-                        <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $pmoducto->id }}', '{{ $pmoducto->nombre }}', '{{ $pmoducto->precio }}')">Añadir</button>
-                    </div> -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center">
+                @foreach ($pmoductos as $pmoducto)
+                <div class="col mb-4">
+                    <div class="card text-white bg-fe9b32">
+                        <img src="{{ asset('images/' . $pmoducto->imagen) }}" class="card-img-top" alt="{{ $pmoducto->nombre }}">
+                        <div class="card-body">
+                        <h5 class="card-title" style="text-shadow: 2px 2px 4px black;">{{ $pmoducto->nombre }}</h5> <!-- Agregar estilo para text-shadow -->
+                        <p class="card-text" style="text-shadow: 2px 2px 4px black;">{{ $pmoducto->descripcion }}</p> <!-- Agregar estilo para text-shadow -->
+                        <p class="card-text" style="text-shadow: 2px 2px 4px black;">${{ $pmoducto->precio }}</p> <!-- Agregar estilo para text-shadow -->
+                            <!-- Input para la cantidad -->
+                            <!--<div class="input-container justify-content-center">
+                                <button class="decrement-button">-</button>
+                                <input type="number" class="number-input" id="number{{ $pmoducto->id }}" value="0">
+                                <button class="increment-button">+</button>
+                            </div> -->
+                            <!-- Botón "Añadir" -->
+                            <!--<div class="d-flex justify-content-center mt-3">
+                                <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $pmoducto->id }}', '{{ $pmoducto->ingrediente }}', '{{ $pmoducto->precio }}')">Añadir</button>
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </section>
 
     </main>
