@@ -9,7 +9,7 @@
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
-<header>
+<header style="text-shadow: 2px 2px 4px black;">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="{{ route('inicio') }}">
@@ -48,7 +48,7 @@
             <div class="ms-auto">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('carritos')}}">
                             Carrito
                             <i class="bi bi-cart bi-lg"></i>
                         </a>
@@ -88,6 +88,26 @@
             </div>
         </div>
     </section>
+
+    <section class="bannerinicio d-flex justify-content-center align-items-center">
+        <a href="{{route('pHogar')}}">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="./images/bannerHogar1.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                    <img src="./images/bannerHogar2.png" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+            </div>
+        </a>
+    </section>
+
 </main>
 
 <footer id="abajo">

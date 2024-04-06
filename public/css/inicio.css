@@ -13,6 +13,10 @@
     background-color: #fe9b32 !important;
 }
 
+.bannerinicio{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
 #btn-back-to-top {
     position: fixed;
     background-color: #fe9b32;

@@ -86,3 +86,7 @@ Route::group([], function(){
 Route::get('/productosSECRETOEDITAR', function () {
     return view('editar');
 })->name('editar');
+
+Route::get('/carrito', function () {
+    return view('carrito');
+})->name('carritos');

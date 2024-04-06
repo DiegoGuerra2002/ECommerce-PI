@@ -9,7 +9,7 @@
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header style="text-shadow: 2px 2px 4px black;">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="{{ route('inicio') }}">
@@ -48,7 +48,7 @@
                 <div class="ms-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{route('carritos')}}">
                                 Carrito
                                 <i class="bi bi-cart bi-lg"></i>
                             </a>
