@@ -92,6 +92,14 @@
                     <a href="https://www.instagram.com/variedadeshildas?igsh=MXBsdGVscW1qcmdyeg=="><i class="bi bi-instagram"></i></a>
                     <a href="https://www.facebook.com/variedades.hildas?mibextid=kFxxJD"><i class="bi bi-facebook"></i></a> 
                 </p>
+                <h5>
+                    Nuestros Horarios
+                </h5>
+                <p>
+                    Lunes a Viernes 8:00AM a las 6:00PM
+                    <br>
+                    Sabados y Domingos 8:00AM hasta las 2:00PM
+                </p>
                 </div>
                 <div class="card-footer text-body-secondary border-0" id="footer-date">
                 </div>

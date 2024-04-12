@@ -49,20 +49,13 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('carritos')}}">
-                            Carrito
                             <i class="bi bi-cart bi-lg"></i>
                         </a>
                     </li>
                     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person" ></i></a>
                                 </li>
                             @endif
                         @else
@@ -75,7 +68,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -162,6 +155,14 @@
                     <br>
                     <a href="https://www.instagram.com/variedadeshildas?igsh=MXBsdGVscW1qcmdyeg=="><i class="bi bi-instagram"></i></a>
                     <a href="https://www.facebook.com/variedades.hildas?mibextid=kFxxJD"><i class="bi bi-facebook"></i></a> 
+                </p>
+                <h5>
+                    Nuestros Horarios
+                </h5>
+                <p>
+                    Lunes a Viernes 8:00AM a las 6:00PM
+                    <br>
+                    Sabados y Domingos 8:00AM hasta las 2:00PM
                 </p>
             </div>
             <div class="card-footer text-body-secondary border-0" id="footer-date">

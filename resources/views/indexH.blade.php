@@ -63,7 +63,7 @@
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
-            <a href="{{route('phoductos.create')}}" class="btn btn-primary">Añadir Productos Cuidado Personal</a>
+            <a href="{{route('phoductos.create')}}" class="btn btn-primary">Añadir Productos Cuidado Hogar</a>
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
