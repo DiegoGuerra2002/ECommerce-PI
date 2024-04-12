@@ -19,6 +19,10 @@ use App\Http\Controllers\PmoductoController;
 
 Route::get('/', function () {
     return view('inicio');
+});
+
+Route::get('/inicio', function () {
+    return view('inicio');
 })->name('inicio');
 
 Route::get('/header', function () {
@@ -90,3 +94,6 @@ Route::get('/productosSECRETOEDITAR', function () {
 Route::get('/carrito', function () {
     return view('carrito');
 })->name('carritos');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
