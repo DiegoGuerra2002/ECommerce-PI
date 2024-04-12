@@ -16,6 +16,9 @@
         <section class= "sec2 d-flex justify-content-center align-items-center">
             <h1 class= "Separadores"> Tu lista de productos : </h1>
         </section>
+        <section class= "sec2 d-flex justify-content-center align-items-center">
+            <h1 class= ""> PROXIMAMENTE </h1>
+        </section>
     </main>
     
     <footer id="abajo">
