@@ -40,6 +40,7 @@
                             <li><a class="dropdown-item" href="{{ route('pCuida') }}">Cuidado Personal</a></li>
                             <li><a class="dropdown-item" href="{{ route('pHogar') }}">Cuidado del Hogar</a></li>
                             <li><a class="dropdown-item" href="{{ route('pMascotas') }}">Cuidado de Mascotas</a></li>
+                            <li><a class="dropdown-item" href="{{ route('pBebidas') }}">Bebidas</a></li>
                         </ul>
                     </li>
                 </ul>

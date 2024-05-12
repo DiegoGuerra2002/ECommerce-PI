@@ -66,7 +66,7 @@
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
-            <a href="{{route('productos.create')}}" class="btn btn-primary">Añadir Productos</a>
+            <a href="{{route('pbebidas.create')}}" class="btn btn-primary">Añadir Bebidas</a>
         </section>
 
         <section class="sec2 d-flex justify-content-center align-items-center">
@@ -80,24 +80,24 @@
                         <th scope="col">Producto</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Imagen</th>
-                        <th scope="col">Precio</th>
+
                         <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($productos as $producto)
+                        @foreach ($pbebidas as $pbebida)
                         <tr>
-                        <th scope="row" style="display: none;">{{$producto->id}}</th>
-                        <td>{{$producto->nombre}}</td>
-                        <td>{{$producto->descripcion}}</td>
+                        <th scope="row" style="display: none;">{{$pbebida->id}}</th>
+                        <td>{{$pbebida->nombre}}</td>
+                        <td>{{$pbebida->descripcion}}</td>
                         <td>
-                            <img src="/images/{{$producto->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
+                            <img src="/images/{{$pbebida->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
                         </td>
-                        <td>{{$producto->precio}}</td>
+                        
                         <td>
                             <div class="btn-group">
-                            <a href="{{route('productos.edit', $producto->id) }}" class="btn btn-primary">Editar</a>
-                            <form action="{{route('productos.destroy', $producto->id) }}" method="POST" class="formEliminar">
+                            <a href="{{route('pbebidas.edit', $pbebida->id) }}" class="btn btn-primary">Editar</a>
+                            <form action="{{route('pbebidas.destroy', $pbebida->id) }}" method="POST" class="formEliminar">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" style="margin-left: 5px;">Borrar</button>
@@ -110,7 +110,7 @@
                 </table>
             </div>
             <div>
-                {!! $productos->links() !!}
+                {!! $pbebidas->links() !!}
             </div>
         </div>
         </section>

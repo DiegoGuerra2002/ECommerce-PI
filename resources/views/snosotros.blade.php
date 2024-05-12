@@ -39,9 +39,7 @@
                 </div>
             </div>
         </section>
-    </main>
-
-
+        
         <section class="sec2 d-flex justify-content-center align-items-center">
             <h1 class="Separadores2">¿Donde estamos ubicados?</h1>
         </section>

@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{{route('pmoductos')}}">Mascotas</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{route('pbebidas')}}">Bebidas</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Nuevo div para el carrito -->

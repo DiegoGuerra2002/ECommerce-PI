@@ -6,6 +6,7 @@ use App\Http\Controllers\PcoductoController;
 use App\Http\Controllers\PpoductoController;
 use App\Http\Controllers\PhoductoController;
 use App\Http\Controllers\PmoductoController;
+use App\Http\Controllers\PbebidaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,6 +54,10 @@ Route::get('/productosMascotas', function () {
     return view('productosMascotas');
 })->name('pMascotas');
 
+Route::get('/productosBebidas', function () {
+    return view('productosBebidas');
+})->name('pBebidas');
+
 Route::get('/sobreNosotros', function () {
     return view('snosotros');
 })->name('snosotros');
@@ -85,6 +90,12 @@ Route::group([], function(){
     Route::resource('/pmoductos', PmoductoController::class);
     Route::get('/M2+EtggJUNX/aE6x3PZEDx1Sd0tXwzpD865ARDeHDofiWgC+gHeLca4dWggziwASnTzLj/3RlYv6dOJC/gp8GNLzwP4wbSC8ifc6ieuoZIxWUQwdqKUkY+8ZX0dFQDy0gVNQriUp+yLfeKVOesGoUZI7hTLBNM4uv8JjUx4QTCe5cQwZSFbfjdiFhIXmS9IM5OtvQFthHBm3LAPwfuslON/PukgUKyoWpT3BWUi7BkeCknIq2a4G2VvrA403tO57CP74dPqyAHcYpUawF0D/w+Yte9hzwZ+c2J6+zd+efTt3uinpAKvG1DBOVlf5XSV9ufLuYyqrfziO37Mz4k31YfN4Ah3bd3za7xbXgX43WymCkcqbD/bxh13bKpArd+xzdNTx820GHnif/QQwqU9oustpGxkAyVkxcUW8EDYyTIE5vCAnHao+IJgNqj6DpAKF', [PmoductoController::class, 'index'])->name('pmoductos');
     Route::get('/productosMascotas', [PmoductoController::class, 'pMascotas'])->name('pMascotas');
+});
+
+Route::group([], function(){
+    Route::resource('/pbebidas', PbebidaController::class);
+    Route::get('/lol', [PbebidaController::class, 'index'])->name('pbebidas');
+    Route::get('/productosBebidas', [PbebidaController::class, 'pBebidas'])->name('pBebidas');
 });
 
 Route::get('/productosSECRETOEDITAR', function () {
