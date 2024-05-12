@@ -34,6 +34,7 @@ class PbebidaController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
             'imagen' => 'required|image|mimes:jpeg,png,svg|max:1024',
+            'precio' => 'required|numeric|min:0', // Validación para el precio
         ]);
     
         $pbebida = $request->all();

@@ -80,7 +80,7 @@
                         <th scope="col">Producto</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Imagen</th>
-
+                        <th scope="col">Precio</th>
                         <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -93,7 +93,7 @@
                         <td>
                             <img src="/images/{{$pbebida->imagen}}" style="max-width: 150px; height: auto;" alt="Imagen del producto">
                         </td>
-                        
+                        <td>{{$pbebida->precio}}</td>
                         <td>
                             <div class="btn-group">
                             <a href="{{route('pbebidas.edit', $pbebida->id) }}" class="btn btn-primary">Editar</a>
