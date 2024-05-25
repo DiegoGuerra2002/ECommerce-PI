@@ -102,9 +102,11 @@ Route::get('/productosSECRETOEDITAR', function () {
     return view('editar');
 })->name('editar');
 
-Route::get('/carrito', function () {
-    return view('carrito');
-})->name('carritos');
-Auth::routes();
+Route::get('/carrito', [ProductoController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [ProductoController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [ProductoController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [ProductoController::class, 'emptyCart'])->name('emptyCart');
 
+Auth::routes();
+Route::get('/producto/{id}', [ProductoController::class, 'agregaralcarrito'])->name('agregaralcarrito');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

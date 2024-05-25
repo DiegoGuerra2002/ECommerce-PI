@@ -20,6 +20,69 @@ class ProductoController extends Controller
         $productos = Producto::all(); // Otra forma de obtener los productos
         return view('productosFrescos')->with('productos', $productos);
     }
+
+    public function agregaralcarrito($id) {
+        $producto = Producto::findOrFail($id);
+        $carrito = session()->get('carrito', []);
+    
+        // Verificar si el producto ya está en el carrito
+        if(isset($carrito[$id])) {
+            // Si el producto ya está en el carrito, incrementar la cantidad
+            $carrito[$id]['quantity']++;
+        } else {
+            // Si el producto no está en el carrito, añadirlo
+            $carrito[$id] = [
+                "nombre" => $producto->nombre,
+                "quantity" => 1,
+                "precio" => $producto->precio,
+                "imagen" => $producto->imagen
+            ];
+        }
+    
+        // Guardar el carrito actualizado en la sesión
+        session()->put('carrito', $carrito);
+    
+        // Redirigir de vuelta con un mensaje de éxito
+        return redirect()->back()->with('success', 'El Producto se ha agregado al carrito');
+    }
+
+    public function deleteCartItem($id)
+    {
+        $carrito = session()->get('carrito', []);
+
+        if(isset($carrito[$id])) {
+            unset($carrito[$id]);
+            session()->put('carrito', $carrito);
+        }
+
+        return redirect()->back()->with('success', 'Producto eliminado del carrito');
+    }
+    public function emptyCart()
+    {
+        session()->forget('carrito');
+
+        return redirect()->back()->with('success', 'Todos los productos han sido eliminados del carrito');
+    }
+    // CartController.php
+
+    public function showCarrito()
+    {
+        // Verificar si el carrito existe en la sesión
+        $carrito = session()->get('carrito', []);
+        
+        // Calcular el total de todos los productos en el carrito
+        $total = array_reduce($carrito, function($carry, $item) {
+            return $carry + ($item['precio'] * $item['quantity']);
+        }, 0);
+
+        // Pasar el carrito y el total a la vista
+        return view('carrito', compact('carrito', 'total'));
+    }
+
+    
+    public function productoCarrito(){
+        return view('carrito');
+    }
     /**
      * Show the form for creating a new resource.
      */

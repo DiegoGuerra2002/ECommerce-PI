@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos Congelados</title>
+    <title>Hilda's | Compra en linea</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
@@ -13,13 +14,73 @@
     @section('content')
     
     <main>
-        <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1 class= "Separadores"> Tu lista de productos : </h1>
-        </section>
-        <section class= "sec2 d-flex justify-content-center align-items-center">
-            <h1 class= ""> PROXIMAMENTE </h1>
-        </section>
-    </main>
+    <section class="sec2 d-flex justify-content-center align-items-center">
+        <h1 class="Separadores">Tu lista de productos:</h1>
+    </section>
+    <section class="sec2 d-flex justify-content-center align-items-center">
+        <h2>{{ Auth::user()->name }}</h2>
+    </section>
+    <section class="sec2 d-flex justify-content-center align-items-center">
+        <div style="max-width: 800px;">
+            <!-- Define el ancho máximo de la tabla -->
+            <table id="carrito" class="table table-bordered table-hover table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (session('carrito'))
+                        @php $total = 0; @endphp
+                        @foreach (session('carrito') as $id => $producto)
+                            @php $subtotal = $producto['precio'] * $producto['quantity']; @endphp
+                            <tr rowId="{{ $id }}">
+                                <td data-th="producto">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <img src="{{ asset('images')}}/{{ $producto['imagen'] }}" class="card-img-top">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h4 class="mb-0">{{ $producto['nombre'] }}</h4>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="precio">${{ $producto['precio'] }}</td>
+                                <td data-th="quantity" class="text-center">{{ $producto['quantity'] }}</td>
+                                <td data-th="Subtotal" class="text-center">${{ $subtotal }}</td>
+                                <td class="actions text-center">
+                                    <a href="{{ URL::to('deleteCartItem/'.$id) }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto?')">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @php $total += $subtotal; @endphp
+                        @endforeach
+                        <tr>
+                            <td colspan="3" class="text-right"><strong>Precio Final</strong></td>
+                            <td class="text-center"><strong>${{ $total }}</strong></td>
+                            <td></td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="sec2 d-flex justify-content-center align-items-center">
+        <a href="{{ URL::to('emptyCart') }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres vaciar el carrito?')">
+            <i class="bi bi-trash-fill"></i> Limpiar carrito
+        </a>
+        <a href="#" class="btn btn-success">
+            Generar Factura
+        </a>
+    </section>
+</main>
+
     
     <footer id="abajo">
         <section class="banner2 d-flex justify-content-center align-items-center">
@@ -122,7 +183,6 @@
         // Insertar la fecha formateada en el HTML del footer
         footerDateElement.textContent = "El dia de hoy es: " + formattedDate;
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z8vwu/LOiQE8hXjBfNfGapnB+X8gakI5lZ2tUX" crossorigin="anonymous"></script>
 
 </body>
 </html>

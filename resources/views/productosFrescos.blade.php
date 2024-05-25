@@ -6,6 +6,7 @@
     <title>Productos Frescos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
@@ -13,6 +14,19 @@
     @section('content')
     
     <main>
+        <section class= "sec2 d-flex">
+            <div class="container mt-4">
+               
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    
+                @endif
+                @yield('content')
+            </div>
+            @yield('scripts')
+        </section>
         <section class="sec2 d-flex justify-content-center align-items-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -41,6 +55,9 @@
             <h1 class= "Separadores"> Productos Frescos </h1>
         </section>
 
+
+        
+
         <section class="sec2 d-flex justify-content-center align-items-center">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center">
                 @foreach ($productos as $producto)
@@ -59,7 +76,7 @@
                             </div> -->
                             <!-- Botón "Añadir" -->
                             <div class="d-flex justify-content-center mt-3">
-                                <button type="button" class="btn btn-success btn-sm" onclick="agregarProducto('{{ $producto->id }}', '{{ $producto->nombre }}', '{{ $producto->descripcion }}', '{{ $producto->precio }}')">Agregar</button>
+                                <a href="{{ route('agregaralcarrito', $producto->id)}}" class="btn btn-outline-danger">Agregar al carrito</a>
                             </div>
                         </div>
                     </div>
@@ -172,7 +189,6 @@
         // Insertar la fecha formateada en el HTML del footer
         footerDateElement.textContent = "El dia de hoy es: " + formattedDate;
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z8vwu/LOiQE8hXjBfNfGapnB+X8gakI5lZ2tUX" crossorigin="anonymous"></script>
-
+    @yield('scripts')
 </body>
 </html>

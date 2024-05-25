@@ -49,8 +49,8 @@
             <div class="ms-auto">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('carritos')}}">
-                            <i class="bi bi-cart bi-lg"></i>
+                        <a class="nav-link" href="{{route('carrito')}}">
+                            <i class="bi bi-cart bi-lg"></i> <span class="badge bg-danger">{{ count((array) session('carrito')) }} </span>
                         </a>
                     </li>
                     @guest
