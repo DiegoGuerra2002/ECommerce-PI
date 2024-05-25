@@ -106,7 +106,38 @@ Route::get('/carrito', [ProductoController::class, 'showCarrito'])->name('carrit
 Route::get('carrito', [ProductoController::class, 'productoCarrito'])->name('carrito');
 Route::get('deleteCartItem/{id}', [ProductoController::class, 'deleteCartItem'])->name('deleteCartItem');
 Route::get('emptyCart', [ProductoController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/producto/{id}', [ProductoController::class, 'agregaralcarrito'])->name('agregaralcarrito');
+
+Route::get('/carrito', [PcoductoController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [PcoductoController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [PcoductoController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [PcoductoController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/pcoducto/{id}', [PcoductoController::class, 'agregaralcarrito'])->name('agregaralcarritoC');
+
+Route::get('/carrito', [PpoductoController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [PpoductoController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [PpoductoController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [PpoductoController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/ppoducto/{id}', [PpoductoController::class, 'agregaralcarrito'])->name('agregaralcarritoCuidado');
+
+Route::get('/carrito', [PhoductoController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [PhoductoController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [PhoductoController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [PhoductoController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/phoducto/{id}', [PhoductoController::class, 'agregaralcarrito'])->name('agregaralcarritoH');
+
+Route::get('/carrito', [PmoductoController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [PmoductoController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [PmoductoController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [PmoductoController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/pmoducto/{id}', [PmoductoController::class, 'agregaralcarrito'])->name('agregaralcarritoM');
+
+Route::get('/carrito', [PbebidaController::class, 'showCarrito'])->name('carrito.show');
+Route::get('carrito', [PbebidaController::class, 'productoCarrito'])->name('carrito');
+Route::get('deleteCartItem/{id}', [PbebidaController::class, 'deleteCartItem'])->name('deleteCartItem');
+Route::get('emptyCart', [PbebidaController::class, 'emptyCart'])->name('emptyCart');
+Route::get('/pbebida/{id}', [PbebidaController::class, 'agregaralcarrito'])->name('agregaralcarritoB');
 
 Auth::routes();
-Route::get('/producto/{id}', [ProductoController::class, 'agregaralcarrito'])->name('agregaralcarrito');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

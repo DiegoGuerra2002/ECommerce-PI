@@ -13,6 +13,19 @@
     @section('content')
     
     <main>
+        <section class= "sec2 d-flex">
+            <div class="container mt-4">
+               
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                    
+                @endif
+                @yield('content')
+            </div>
+            @yield('scripts')
+        </section>
         <section class="sec2 d-flex justify-content-center align-items-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -66,9 +79,9 @@
                                 <button class="increment-button">+</button>
                             </div> -->
                             <!-- Botón "Añadir" -->
-                            <!--<div class="d-flex justify-content-center mt-3">
-                                <button type="button" class="btn btn-danger btn-lg" onclick="agregarProducto('{{ $ppoducto->id }}', '{{ $ppoducto->ingrediente }}', '{{ $ppoducto->precio }}')">Añadir</button>
-                            </div> -->
+                            <div class="d-flex justify-content-center mt-3">
+                                <a href="{{ route('agregaralcarritoCuidado', $ppoducto->id)}}" class="btn btn-outline-danger">Agregar al carrito</a>
+                            </div>
                         </div>
                     </div>
                 </div>
