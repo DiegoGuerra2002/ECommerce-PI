@@ -50,7 +50,7 @@
               </label>
             </div>
             @if (Route::has('password.request'))
-            <a href="{{ route('password.request') }}" class="text-body">¿Olvido su contraseña?</a>
+            <!--<a href="{{ route('password.request') }}" class="text-body">¿Olvido su contraseña?</a>-->
             @endif
           </div>
 

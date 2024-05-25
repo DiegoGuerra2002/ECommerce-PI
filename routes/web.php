@@ -7,6 +7,7 @@ use App\Http\Controllers\PpoductoController;
 use App\Http\Controllers\PhoductoController;
 use App\Http\Controllers\PmoductoController;
 use App\Http\Controllers\PbebidaController;
+use App\Http\Controllers\PDFController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -137,7 +138,7 @@ Route::get('carrito', [PbebidaController::class, 'productoCarrito'])->name('carr
 Route::get('deleteCartItem/{id}', [PbebidaController::class, 'deleteCartItem'])->name('deleteCartItem');
 Route::get('emptyCart', [PbebidaController::class, 'emptyCart'])->name('emptyCart');
 Route::get('/pbebida/{id}', [PbebidaController::class, 'agregaralcarrito'])->name('agregaralcarritoB');
-
+Route::get('generatePDF', [PDFController::class, 'generatePDF'])->name('generatePDF');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

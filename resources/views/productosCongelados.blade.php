@@ -71,9 +71,11 @@
                                 <button class="increment-button">+</button>
                             </div> -->
                             <!-- Botón "Añadir" -->
-                            <div class="d-flex justify-content-center mt-3">
-                                <a href="{{ route('agregaralcarritoC', $pcoducto->id)}}" class="btn btn-outline-danger">Agregar al carrito</a>
-                            </div>
+                            @if (Auth::check())
+                                <div class="d-flex justify-content-center mt-3">
+                                    <a href="{{ route('agregaralcarritoC', $pcoducto->id)}}" class="btn btn-success">Agregar al carrito</a>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

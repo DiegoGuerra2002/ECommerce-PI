@@ -75,9 +75,10 @@
         <a href="{{ URL::to('emptyCart') }}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres vaciar el carrito?')">
             <i class="bi bi-trash-fill"></i> Limpiar carrito
         </a>
-        <a href="#" class="btn btn-success">
+        <a href="{{ route('generatePDF') }}" class="btn btn-success">
             Generar Factura
         </a>
+
     </section>
 </main>
 

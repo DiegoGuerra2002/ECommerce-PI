@@ -48,15 +48,17 @@
             <!-- Nuevo div para el carrito -->
             <div class="ms-auto">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('carrito')}}">
-                            <i class="bi bi-cart bi-lg"></i> <span class="badge bg-danger">{{ count((array) session('carrito')) }} </span>
-                        </a>
-                    </li>
+                    @if (Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('carrito') }}">
+                                <i class="bi bi-cart bi-lg"></i> <span class="badge bg-danger">{{ count((array) session('carrito')) }} </span>
+                            </a>
+                        </li>
+                    @endif
                     @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person" ></i></a>
+                                    <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person" > Iniciar Sesion</i></a>
                                 </li>
                             @endif
                         @else
