@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factura - {{ $date }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="./css/inicio.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
+            position: relative;
         }
         .table {
             width: 100%;
@@ -29,9 +33,20 @@
         .text-right {
             text-align: right;
         }
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
+    <section class="separadorlogo">
+        <a class="logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" width="100" height="100">
+        </a>
+    </section>
     <h1 class="text-center">Tu lista de productos</h1>
     <h2 class="text-center">{{ $user->name }}</h2>
     <table class="table">
@@ -58,5 +73,8 @@
             </tr>
         </tbody>
     </table>
+    <section class="sec2 d-flex justify-content-center align-items-center">
+        <h4 class="firma">Firma y sello de entregado:   _________________________.</h4>
+    </section>
 </body>
 </html>

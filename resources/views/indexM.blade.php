@@ -43,16 +43,7 @@
                     </ul>
                 </div>
                 <!-- Nuevo div para el carrito -->
-                <div class="ms-auto">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                Carrito
-                                <i class="bi bi-cart bi-lg"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                
             </div>
         </nav>
     </header>

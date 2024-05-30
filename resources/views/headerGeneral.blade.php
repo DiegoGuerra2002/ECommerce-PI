@@ -9,7 +9,7 @@
     <link href="./css/inicio.css" rel="stylesheet">
 </head>
 <body>
-    <header style="text-shadow: 2px 2px 4px black;">
+    <header style="">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="{{ route('inicio') }}">
@@ -57,7 +57,7 @@
                         @endif
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item" style="">
                                     <a class="nav-link" href="{{ route('login') }}"><i class="bi bi-person" > Iniciar Sesion</i></a>
                                 </li>
                             @endif
